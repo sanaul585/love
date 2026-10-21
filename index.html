@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10060d">
+  <title>Our Little Forever ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <div id="hearts" aria-hidden="true"></div>
+
+  <main id="loginScreen" class="login-screen">
+    <div class="login-card glass">
+      <div class="heart-logo">♥</div>
+      <p class="eyebrow">A LITTLE WORLD MADE FOR TWO</p>
+      <h1>Our Little <span>Forever</span></h1>
+      <p class="subtext">A private little world for two hearts. 💌<br>Only you and me… Always ❤️</p>
+      <form id="loginForm">
+        <label for="email">Email / User ID</label>
+        <input id="email" type="email" placeholder="Enter your Firebase email" autocomplete="username" required>
+        <label for="password">Password</label>
+        <div class="password-wrap"><input id="password" type="password" placeholder="Enter your password" autocomplete="current-password" required><button id="togglePasswordBtn" type="button" class="password-toggle" aria-label="Show password">Show</button></div>
+        <button class="primary-btn" type="submit">Unlock Our Love ♥</button>
+        <p id="loginError" class="error-message" role="alert"></p>
+      </form>
+      <p class="tiny-note">♥ Made with love for my fiancée ♥</p>
+    </div>
+  </main>
+
+  <div id="loveApp" class="hidden">
+    <header class="topbar">
+      <a class="brand" href="#home">S <span>♥</span> M</a>
+      <nav><a href="#home">Home</a><a href="#night">Night Love</a><a href="#letters">Love Letters</a><a href="#countdown">Our Future</a></nav>
+      <button id="logoutBtn" class="outline-btn">Logout ↗</button>
+    </header>
+
+    <section id="home" class="hero section-wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">MY TODAY · MY TOMORROW · MY FOREVER</p>
+        <h1>Mobashshera,<br>you are my <span>favorite feeling.</span></h1>
+        <p class="hero-description">Tumse har raat der tak baat ho ya na ho, meri har dua mein tumhari khushi zaroor hoti hai. You are the beautiful chapter I look forward to every day. ❤️</p>
+        <div class="hero-actions"><a class="primary-btn link-btn" href="#letters">Open My Heart 💌</a><a class="outline-btn link-btn" href="#night">A Little Romance 🌙</a></div>
+        <p class="signature">Forever yours, <strong>Sanaul ♥</strong></p>
+      </div>
+      <div class="heart-scene" aria-label="A glowing three dimensional heart"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="big-heart">♥</div><span class="spark spark-one">✦</span><span class="spark spark-two">✧</span><span class="spark spark-three">♥</span></div>
+    </section>
+
+    <section id="night" class="section-wrap content-section">
+      <p class="eyebrow">01 · AFTER THE WORLD GOES QUIET</p><h2>Late Night <span>Love Corner</span> 🌙</h2>
+      <div class="glass message-card"><div class="moon">☾</div><p id="nightMessage" class="love-message">Raat ki khamoshi mein bhi ek naam dil ko sukoon deta hai… Mobashshera, that name is yours. ❤️</p><button id="nextMessage" class="primary-btn">Ek aur pyaari baat 💗</button></div>
+    </section>
+
+    <section id="letters" class="section-wrap content-section">
+      <p class="eyebrow">02 · WORDS FROM MY HEART</p><h2>A Secret <span>Love Letter</span> 💌</h2><p class="section-intro">Har button mein tumhare liye ek chhoti si feeling chhupi hai.</p>
+      <div class="letter-grid">
+        <button class="letter-card" data-letter="0"><span class="letter-icon">💌</span><strong>When I Miss You</strong><small>Tap to open your letter</small></button>
+        <button class="letter-card" data-letter="1"><span class="letter-icon">🌹</span><strong>A Promise For You</strong><small>Something from my heart</small></button>
+        <button class="letter-card" data-letter="2"><span class="letter-icon">🌙</span><strong>Before You Sleep</strong><small>A little goodnight surprise</small></button>
+      </div>
+      <article id="letterReveal" class="glass letter-reveal hidden" aria-live="polite"><button id="closeLetter" class="close-btn" aria-label="Close letter">×</button><div class="letter-icon">💖</div><h3 id="letterTitle">A letter for you</h3><p id="letterText"></p><p class="signature">— Tumhara Sanaul ♥</p></article>
+    </section>
+
+    <section id="countdown" class="section-wrap content-section">
+      <p class="eyebrow">03 · THE DAY WE DREAM OF</p><h2>Our Forever <span>Begins</span> 💍</h2><p class="section-intro">InshaAllah, one beautiful day at a time, closer to our new beginning.</p>
+      <div class="countdown-grid"><div class="time-box glass"><strong id="days">---</strong><span>Days</span></div><div class="time-box glass"><strong id="hours">--</strong><span>Hours</span></div><div class="time-box glass"><strong id="minutes">--</strong><span>Minutes</span></div><div class="time-box glass"><strong id="seconds">--</strong><span>Seconds</span></div></div>
+      <p id="countdownNote" class="tiny-note">Counting down to our special day ❤️</p>
+    </section>
+
+    <section class="section-wrap final-note"><div class="glass final-card"><div class="heart-logo">♥</div><h2>One heart. Two names. <span>One future.</span></h2><p>Mobashshera Khatoon &amp; Sanaul Islam</p><p class="signature">A little website, a whole lot of love. 💗</p></div></section>
+    <footer>Made with ❤️ by Sanaul Islam · Just for our little world</footer>
+  </div>
+
+  <div id="toast" class="toast" role="status"></div>
+  <div class="floating-controls"><button id="musicBtn" class="round-btn" aria-label="Toggle music">♫ Music: Off</button><button id="heartBtn" class="round-btn" aria-label="Send a heart">♥ Send Love</button></div>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
