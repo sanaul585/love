@@ -182,3 +182,37 @@ $("musicBtn").addEventListener("click", async () => {
     showToast("Music paused. 💗");
   }
 });
+
+
+// Lover Images gallery: previews selected images locally in this browser.
+const loverPhotoInput = $("loverPhotoInput");
+const loverPhotoGallery = $("loverPhotoGallery");
+if (loverPhotoInput && loverPhotoGallery) {
+  loverPhotoInput.addEventListener("change", () => {
+    const files = Array.from(loverPhotoInput.files || []).filter(file => file.type.startsWith("image/"));
+    if (!files.length) return;
+    const emptyCard = loverPhotoGallery.querySelector(".photo-empty");
+    if (emptyCard) emptyCard.remove();
+    files.forEach(file => {
+      const card = document.createElement("article");
+      card.className = "lover-photo-card glass";
+      const image = document.createElement("img");
+      image.src = URL.createObjectURL(file);
+      image.alt = "A special lover memory";
+      image.loading = "lazy";
+      image.addEventListener("load", () => URL.revokeObjectURL(image.src), { once: true });
+      const caption = document.createElement("p");
+      caption.textContent = file.name.replace(/\.[^.]+$/, "") || "Our special memory ❤️";
+      const remove = document.createElement("button");
+      remove.type = "button";
+      remove.className = "photo-remove-btn";
+      remove.textContent = "Remove ×";
+      remove.setAttribute("aria-label", "Remove this photo");
+      remove.addEventListener("click", () => card.remove());
+      card.append(image, caption, remove);
+      loverPhotoGallery.appendChild(card);
+    });
+    loverPhotoInput.value = "";
+    showToast("Your lovely photos are added to this preview ❤️");
+  });
+}
