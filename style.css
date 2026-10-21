@@ -30,9 +30,8 @@
 }
 body {
   color: var(--text);
-  background:
-    linear-gradient(135deg, rgba(255, 236, 245, .52), rgba(255, 221, 235, .40)),
-    url("assets/romantic-background.png") center center / cover fixed no-repeat;
+  /* Full image remains visible on desktop and mobile: stretch to viewport instead of cropping */
+  background: #ef9aa9 url("assets/romantic-background.png") center center / 100% 100% fixed no-repeat;
 }
 .ambient { opacity: .08; }
 .glass {
@@ -95,3 +94,82 @@ body { background-attachment: fixed; background-position: center center; backgro
 .password-toggle { position: absolute; right: 9px; top: 50%; transform: translateY(-50%); border: 0; border-radius: 8px; padding: 6px 9px; color: #7e2449; background: rgba(255, 228, 240, .9); font-size: .72rem; font-weight: 600; }
 #loginForm .primary-btn { background: linear-gradient(110deg, #f43f86, #d6005b); color: white; border-radius: 28px; }
 @media (max-width: 600px) { body { background-attachment: scroll; background-position: 35% center; } .login-screen { padding: 24px 14px; } .login-card { padding: 27px 20px; } }
+
+/* Screenshot-matched sunset login: sharp photo, no background blur */
+:root{--text:#58152f;--muted:#75465b;--pink:#e52d78;--rose:#9c1b50;--border:rgba(179,35,91,.25)}
+html,body{min-height:100%;}
+body{min-height:100vh;color:#fff;background:#e98b9e url("assets/romantic-background.png") center center / cover no-repeat fixed;}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:transparent;}
+.ambient{display:none!important}
+.login-screen{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;min-height:100svh;padding:0;position:relative;isolation:isolate;z-index:1;background:transparent;}
+.login-topbar{min-height:78px;padding:10px clamp(18px,5.5vw,88px);display:flex;align-items:center;justify-content:space-between;gap:24px;background:rgba(255,242,248,.88);border-bottom:1px solid rgba(255,255,255,.68);color:#8c1645;}
+.login-brand{display:flex;align-items:center;gap:12px;min-width:max-content;color:#c91e58}
+.brand-heart{font-size:42px;line-height:1;text-shadow:0 3px 8px #f5b0c8}
+.login-brand strong{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(1.45rem,2.3vw,2.1rem);font-style:italic;line-height:1.05;white-space:nowrap}
+.login-brand strong i{font-style:normal;color:#d52060;padding:0 7px}
+.login-brand small{display:block;text-align:center;color:#755065;font-size:.72rem;letter-spacing:.3px;margin-top:5px}
+.login-nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(12px,2.2vw,34px);flex-wrap:nowrap}
+.login-nav a{display:flex;align-items:center;gap:8px;white-space:nowrap;font-size:.82rem;color:#7f254b;padding:13px 0;border-bottom:2px solid transparent}
+.login-nav a:first-letter{font-size:1.05rem}.login-nav a.active{color:#d51f63;border-bottom-color:#df2b70}
+.login-layout{width:min(1450px,100%);margin:auto;padding:clamp(26px,5.5vh,64px) clamp(18px,4.2vw,64px) 34px;display:grid;grid-template-columns:minmax(340px, min(34vw, 500px)) minmax(300px,1fr);gap:clamp(35px,5vw,78px);align-items:center;justify-content:center;}
+.login-card{width:100%;max-width:500px;justify-self:center;padding:clamp(25px,3vw,42px) clamp(22px,3vw,46px);text-align:center;background:rgba(255,246,250,.83);border:1px solid rgba(255,255,255,.9);border-radius:16px;box-shadow:0 10px 35px rgba(87,16,44,.13);backdrop-filter:none;-webkit-backdrop-filter:none;color:#58152f;}
+.login-emblem{font-size:64px;line-height:1;color:#d51f68;text-shadow:2px 2px 0 #ff9abf;margin-bottom:4px;font-family:Georgia,serif}
+.login-card .eyebrow{font-size:.65rem;letter-spacing:2px;color:#a72a58;margin:0}
+.login-card h1{font-size:clamp(2.25rem,3.2vw,3.05rem);font-style:italic;margin:5px 0 12px;color:#65102f}
+.heart-divider,.or-divider{display:flex;align-items:center;justify-content:center;gap:13px;color:#c51d5d;font-size:1.3rem}
+.heart-divider span,.or-divider span{height:1px;background:#d87598;flex:1;max-width:145px}
+.login-card .subtext{margin:14px 0 22px;color:#65485b;font-size:.9rem;line-height:1.7}
+#loginForm{margin:0;text-align:left}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.login-input-wrap{display:flex;align-items:center;gap:12px;margin:13px 0;padding:0 14px;min-height:53px;background:rgba(255,255,255,.88);border:1px solid #e8b6c9;border-radius:13px;color:#6b1838}
+.login-input-wrap>span{font-size:1.15rem;flex-shrink:0}.login-input-wrap .input-lock{font-size:.9rem;margin-left:auto}
+.login-input-wrap input{width:100%;min-width:0;padding:13px 0!important;background:transparent!important;border:0!important;outline:none;color:#51152f!important;font-size:.84rem}
+.login-input-wrap input::placeholder{color:#a37c8e}
+.login-input-wrap:focus-within{border-color:#dc4380;box-shadow:0 0 0 3px rgba(220,67,128,.1)}
+.password-toggle{position:static;transform:none;flex-shrink:0;border:0;background:transparent;color:#682044;font-size:1.05rem;padding:8px 2px}
+#loginForm .primary-btn{width:100%;min-height:53px;margin-top:12px;border:0;border-radius:30px;background:linear-gradient(105deg,#f63e83,#d60059);color:#fff;box-shadow:0 7px 18px rgba(211,0,88,.22);font-size:.9rem}
+#loginForm .primary-btn span{margin-left:10px}.error-message{color:#b20e4d;min-height:16px;margin:8px 0 0;font-size:.76rem}
+.or-divider{gap:18px;font-size:.9rem;color:#65102f;margin:13px 0}
+.login-hint{display:flex;align-items:center;gap:12px;text-align:left;margin:0;padding:13px 15px;border:1px solid #e9a6bf;border-radius:12px;color:#641734;font-size:.72rem;line-height:1.6}
+.login-hint:first-letter{font-size:1.3rem}.login-hint span{display:block}.login-card .tiny-note{color:#92234d;font-size:.68rem;margin:19px 0 0}
+.login-intro{color:#fff;text-shadow:0 2px 8px rgba(70,15,36,.3);max-width:660px;justify-self:center}
+.login-intro h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.3rem,4vw,3.7rem);font-style:italic;font-weight:600;margin:0 0 12px;color:#fff;white-space:nowrap}
+.login-intro h2 span{color:#ff7cae;text-shadow:0 2px 10px rgba(150,0,54,.35)}
+.login-intro h3{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,2.3vw,2rem);font-style:italic;font-weight:500;margin:0 0 30px;color:#fff}
+.login-intro>p{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.25vw,1.25rem);line-height:1.55;margin:0 0 25px 7%;}
+.feature-list{display:grid;grid-template-columns:repeat(3,minmax(75px,1fr));gap:18px 0;max-width:490px;margin:0 auto;text-align:center}
+.feature-list>div{display:flex;flex-direction:column;align-items:center;gap:5px;padding:0 13px;border-right:1px solid rgba(255,129,174,.65)}
+.feature-list>div:nth-child(3),.feature-list>div:last-child{border-right:0}.feature-list b{font-size:2rem;color:#ff78ac;line-height:1.1}.feature-list span{font-size:.82rem;line-height:1.35;color:#fff}
+.login-footer{text-align:center;color:#fff;text-shadow:0 2px 8px rgba(70,15,36,.45);padding:0 15px 14px;margin-top:auto;font-family:'Cormorant Garamond',serif;font-style:italic}
+.login-footer>span{font-size:1.2rem;letter-spacing:2px}.login-footer p{margin:5px 0 0;font-size:1.15rem}
+.background-signature{position:absolute;right:22px;bottom:16px;color:white;text-shadow:0 2px 8px rgba(70,15,36,.55);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;margin:0}
+/* Keep the authenticated content legible over the same sharp photo */
+#loveApp{color:#58152f}.topbar{background:rgba(255,242,248,.91);backdrop-filter:none;-webkit-backdrop-filter:none;border-bottom-color:rgba(255,255,255,.65)}
+.glass{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(255,247,251,.87);}
+@media(max-width:1050px){.login-topbar{align-items:flex-start;flex-direction:column;gap:6px}.login-nav{width:100%;justify-content:space-between;gap:12px}.login-layout{grid-template-columns:minmax(300px,430px) minmax(260px,1fr);gap:28px;padding-top:35px}.login-intro h2{white-space:normal}.login-intro>p{margin-left:0}}
+@media(max-width:760px){body{background-attachment:scroll;background-position:34% center;background-size:cover}.login-topbar{padding:12px 16px;align-items:center}.login-brand{min-width:0}.login-brand strong{font-size:1.45rem;white-space:normal}.brand-heart{font-size:34px}.login-brand small{font-size:.65rem}.login-nav{justify-content:flex-start;overflow-x:auto;padding-bottom:5px;gap:20px;scrollbar-width:thin}.login-nav a{font-size:.76rem}.login-layout{display:flex;flex-direction:column;gap:30px;padding:28px 16px 24px}.login-card{max-width:470px;padding:26px 22px}.login-intro{width:min(100%,520px);text-align:center;padding:10px 8px}.login-intro h2{font-size:2.45rem}.login-intro h3{margin-bottom:18px}.login-intro>p{font-size:1.05rem;margin:0 auto 22px}.feature-list{max-width:390px;gap:16px 0}.feature-list b{font-size:1.75rem}.feature-list span{font-size:.76rem}.login-footer{padding:12px 12px 24px}.background-signature{display:none}}
+@media(max-width:420px){.login-brand strong{font-size:1.2rem}.login-nav{gap:15px}.login-nav a{font-size:.72rem}.login-layout{padding-inline:12px}.login-card{padding:23px 16px}.login-card h1{font-size:2.3rem}.login-emblem{font-size:54px}.login-input-wrap{gap:9px;padding-inline:11px}.feature-list>div{padding-inline:7px}.feature-list span{font-size:.7rem}.login-intro h2{font-size:2rem}.login-intro h3{font-size:1.35rem}}
+@media(prefers-reduced-motion:reduce){.login-card{animation:none}}
+
+/* Keep the full sunset artwork visible on narrow screens without cropping the sides. */
+@media (max-width: 760px) {
+  body { background-size: 100% 100%; background-attachment: fixed; }
+}
+
+/* Lover Images gallery */
+.photo-section { scroll-margin-top: 24px; }
+.photo-upload-card { max-width: 650px; margin: 24px auto 30px; padding: 28px 22px; text-align: center; border: 1px solid rgba(221,65,125,.24); border-radius: 22px; color: #641737; }
+.photo-upload-icon { font-size: 2.8rem; margin-bottom: 5px; }
+.photo-upload-card h3 { margin: 4px 0 8px; font-size: 1.45rem; }
+.photo-upload-card p { margin: 0 0 18px; color: #81546a; }
+.photo-pick-btn { display: inline-flex; align-items: center; justify-content: center; cursor: pointer; min-height: 46px; padding: 12px 22px; }
+.photo-note { font-size: .78rem; line-height: 1.5; margin: 16px 0 0 !important; }
+.lover-photo-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 18px; }
+.lover-photo-card { min-width: 0; overflow: hidden; padding: 10px; border-radius: 18px; color: #641737; border: 1px solid rgba(221,65,125,.2); }
+.lover-photo-card img { display: block; width: 100%; height: 290px; object-fit: cover; border-radius: 12px; background: #f8dce7; }
+.lover-photo-card p { overflow-wrap: anywhere; margin: 10px 4px 8px; font-weight: 600; }
+.photo-remove-btn { border: 1px solid #e9a6bf; color: #9c1b50; background: #fff1f6; border-radius: 20px; padding: 7px 13px; cursor: pointer; }
+.photo-empty { grid-column: 1 / -1; text-align: center; padding: 28px 16px; color: #8c3157; border-radius: 18px; }
+.photo-empty span { font-size: 2.5rem; }
+.photo-empty p { margin-bottom: 0; }
+@media (max-width: 760px) { .topbar nav { flex-wrap: wrap; gap: 10px 16px; } .photo-upload-card { padding: 22px 15px; } .lover-photo-card img { height: min(72vw, 360px); } }
